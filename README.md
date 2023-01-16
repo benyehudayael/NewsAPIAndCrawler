@@ -1,55 +1,37 @@
-# News Viewer of RSS Feeds
+# News Api And Crawler
 
-This repository contains the implementation of a crawling and scraping of news items from RSS feeds. The items are extracted using HtmlAgilityPack and persisted in SqlServer DB. The .Net Core Web API allows retrieval of the data for the client app. An angular application is also built to view the items.
+This repository contains backend application written in C# that consists of two projects: News Api and Crawler.
 
-## Getting Started
+## Crawler 🕷
+The Crawler project uses HtmlAgilityPack to collect items from news RSS files and saves them in a SQL Server database. As long as the application is running, it will extract items from a certain RSS list once an hour.
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+## News Api 👂
+The News project contains three API controllers for the client application: one for the items, the second for the subjects of the items, and the third for the sources. To get data from the database, NewsContext uses the Entity Framework to return data from the tables.
 
-### Prerequisites
+### Prerequisites 📝
 
 You need to have the following software installed on your machine:
 - SqlServer
 - .Net Core
-- Angular
 
-### Installing
+## Getting Started ▶
 
-Clone the repository to your local machine:
+Clone the repository and navigate to the root directory of the project. Run the command `dotnet restore` to restore the packages and dependencies, then run the command `dotnet run` to start the application.
 
-```
-git clone https://github.com/<username>/News-Viewer-RSS-Feeds.git
-```
+Please note that you will need to configure the SQL Server connection string in the `appsettings.json` file before running the application.
 
-Navigate to the project folder and install the necessary packages:
+## Screenshots or videos
 
-```
-cd News-Viewer-RSS-Feeds
-npm install
-```
-
-Run the application:
-
-```
-ng serve
-```
 
 ## Built With
 
 * [HtmlAgilityPack](https://html-agility-pack.net/) - HTML parser
 * [.Net Core](https://dotnet.microsoft.com/download) - Cross-platform framework
-* [Angular](https://angular.io/) - Front-end web framework
 
-## Contributing
+## Authors 💻
 
-Please read [CONTRIBUTING.md](https://github.com/<username>/News-Viewer-RSS-Feeds/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+* **Yael** - *Software Developer* - [<username>](https://github.com/benyehudayael)
 
-## Authors
+## The project's target 🎯
 
-* **<Your name>** - *Initial work* - [<username>](https://github.com/<username>)
-
-See also the list of [contributors](https://github.com/<username>/News-Viewer-RSS-Feeds/graphs/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/<username>/News-Viewer-RSS-Feeds/blob/master/LICENSE) file for details.
+I wrote this app to experiment and get better at writing code in C#.
